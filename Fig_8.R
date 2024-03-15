@@ -21,7 +21,7 @@ windowsFonts(HEL=windowsFont("Helvetica CE 55 Roman"),
 
 #
 gc_plot = read.csv('./data/climate_space.csv')
-
+summary(gc_plot)
 ## Ws CV
 p_a_w <- ggplot(data = gc_plot, aes(x = MAT, y =MAP)) +
   geom_polygon(data = Whittaker_biomes, aes(x=temp_c, y = precp_cm*10, fill = biome),
@@ -45,7 +45,7 @@ p_a_w <- ggplot(data = gc_plot, aes(x = MAT, y =MAP)) +
   scale_x_continuous(breaks = seq(-50,50,10),limits = c(-22.5, 32.5),expand = c(0, 0)) + 
   ylab(expression('Yearly total precipation (mm)')) +
   xlab(expression(paste("Yearly mean air temperature (",degree,"C)"))) + 
-  scale_color_viridis(direction = -1, name = expression(paste('V'[unique],' of ','W'[s],' (%)'))) +
+  scale_color_viridis(direction = -1,limits = c(-25,75), name = expression(paste('V'[unique],' of ','W'[s],' (%)'))) +
   guides(fill = FALSE, size = guide_legend(label.position = 'bottom', order = 1)) +
   annotate("text", x = -19, y = 250, label = "(a)", family = 'Times',size = 8)
 
@@ -100,7 +100,7 @@ p_a_t <- ggplot(data = gc_plot, aes(x = MAT, y =MAP)) +
   scale_x_continuous(breaks = seq(-50,50,10),limits = c(-22.5, 32.5),expand = c(0, 0)) + 
   ylab(expression('Yearly total precipation (mm)')) +
   xlab(expression(paste("Yearly mean air temperature (",degree,"C)"))) + 
-  scale_color_viridis(direction = -1,limits = c(-10,10), name = expression(paste('V'[unique],' of ','T'[s],' (%)'))) +
+  scale_color_viridis(direction = -1,limits = c(-25,75), name = expression(paste('V'[unique],' of ','T'[s],' (%)'))) +
   guides(fill = FALSE, size = guide_legend(label.position = 'bottom', order = 1)) +
   annotate("text", x = -19, y = 250, label = "(b)", family = 'Times',size = 8)
 

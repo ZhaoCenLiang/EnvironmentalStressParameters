@@ -4,7 +4,7 @@ library(plotbiomes)
 library(ggpmisc)
 library(patchwork)
 library(viridis)
-
+setwd('D:/JuypterNotebook/Github/Environmental-Stress-Parameters/')
 theme_zg <- function(..., bg='white'){
   require(grid)
   theme_classic(...) +
@@ -257,6 +257,6 @@ CD
 P_TW_TOTAL = p_tw_r2 + p_tw_rMAE + p_tw_cv + p_tw_resi + plot_layout(design = layout)
 
 ggsave(P_TW_TOTAL, path = './plot/',
-       file='fig_7.pdf', width=12, height=12, dpi = 450)
+       file='fig_7.pdf', width=13, height=12, dpi = 450)
 ggsave(P_TW_TOTAL, path = './plot/',
-       file='fig_7.png', width=12.5, height=12, dpi = 600)
+       file='fig_7.png', width=13, height=12, dpi = 600)
